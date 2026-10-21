@@ -1,43 +1,37 @@
-# 01 · New York Restaurants
+# SQL Portfolio
 
-Exploring a table of New York City restaurants to answer practical "where should we eat tonight?" questions using core SQL filtering and sorting.
+Hands-on SQL projects completed as part of my data analytics training. Each project answers a set of business-style questions against a real-world-style dataset, with the queries, explanations and results included.
 
-## Dataset
+## Projects
 
-A single table, `nomnom`:
-
-| Column | Type | Description |
+| # | Project | What it covers |
 |---|---|---|
-| `name` | TEXT | Restaurant name |
-| `neighborhood` | TEXT | NYC neighborhood |
-| `cuisine` | TEXT | Type of food |
-| `review` | REAL | Average customer rating (0–5) |
-| `price` | TEXT | `$` (budget) to `$$$` (premium) |
-| `health` | TEXT | Health inspection grade (A/B/C), `NULL` if pending |
+| 01 | [New York Restaurants](01-new-york-restaurants/) | Filtering, pattern matching, NULL handling, sorting and categorising with `CASE` |
+| 02 | [Climate Change](02-climate-change/) | Window functions on 125 years of US state temperatures: trends, year-on-year change, rankings, quartiles, with real findings and charts |
+| 03 | [Lyft Trip Data](03-lyft-trip-data/) | Joining trip, rider and car tables, combining tables with `UNION`, and answering business questions with aggregates |
+| 04 | [Create a Table](04-create-a-table/) | Creating and managing a table end to end (`CREATE`, `INSERT`, `UPDATE`, `ALTER`, `DELETE`) and enforcing data quality with constraints |
+| 05 | [Trends in Startups](05-trends-in-startups/) | Aggregate functions to compare startup funding, valuation by sector, crowded markets and company size by city |
+| 06 | [Hacker News Trends](06-hacker-news-trends/) | Testing whether power users dominate, categorising traffic sources with `CASE`, and finding the best time to post with date functions |
 
-## Questions answered
+*More projects being added.*
 
-| # | Question | SQL used |
-|---|---|---|
-| 1 | What does the data look like? | `SELECT *` |
-| 2–3 | Which neighborhoods and cuisines are covered? | `DISTINCT` |
-| 4 | Where can we get Chinese takeout? | `WHERE =` |
-| 5 | Which restaurants are rated 4+? | Comparison operators |
-| 6 | Fancy Italian for a date night? | `AND` |
-| 7 | Find a place from a half-remembered name | `LIKE` with wildcards |
-| 8 | What delivers to Midtown, Downtown or Chinatown? | `OR`, and the shorter equivalent `IN` |
-| 9 | Which restaurants have a pending health grade? | `IS NULL` |
-| 10 | Top 10 by customer review | `ORDER BY … DESC`, `LIMIT` |
-| 11 | Turn numeric ratings into readable labels | `CASE … WHEN` |
+## SQL skills
 
-All queries are in [`queries.sql`](queries.sql).
+- **Creating & managing data:** `CREATE TABLE`, `INSERT`, `UPDATE`, `ALTER TABLE`, `DELETE`, constraints (`PRIMARY KEY`, `NOT NULL`, `UNIQUE`)
+- **Querying & filtering:** `SELECT`, `DISTINCT`, `WHERE`, `AND`/`OR`, `IN`, `LIKE`, `IS NULL`
+- **Sorting & limiting:** `ORDER BY`, `LIMIT`
+- **Conditional logic:** `CASE … WHEN`
+- **Window functions:** `OVER`, `PARTITION BY`, running averages, `FIRST_VALUE()`, `LAG()`, `RANK()`, `NTILE()`
+- **Joins & unions:** `INNER JOIN`, `LEFT JOIN`, `CROSS JOIN`, `UNION`, primary and foreign keys
+- **Aggregates & grouping:** `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`, `ROUND()`, `GROUP BY`, `HAVING`
+- **Subqueries:** filtering on calculated columns, percentage-of-total calculations
+- **Dates & text:** `strftime()`, `LIKE` pattern matching inside `CASE`
 
-## Key takeaways
+## How to run
 
-- Missing values must be checked with `IS NULL`; `= NULL` never matches anything.
-- `LIKE '%term%'` is a quick way to search text when you only know part of a value.
-- `CASE` turns raw numbers into categories that are easier for non-technical readers to interpret, a common step before reporting.
+The queries use standard SQL and run in SQLite, PostgreSQL or MySQL. Open any project's `queries.sql` in a SQL client such as [DB Browser for SQLite](https://sqlitebrowser.org/) or an online editor like [sqliteonline.com](https://sqliteonline.com/).
 
-## Skills demonstrated
+## About me
 
-`SELECT` · `DISTINCT` · `WHERE` · `AND` / `OR` / `IN` · `LIKE` · `IS NULL` · `ORDER BY` · `LIMIT` · `CASE`
+Aspiring data analyst building practical SQL, Excel and reporting skills.
+<!-- Add your LinkedIn link here -->
